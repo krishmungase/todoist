@@ -8,7 +8,7 @@ const DesktopDashboardSidebar = ({ openSideBar, setOpenSideBar }) => {
   return (
     <div>
       <div className='px-4'>
-        <TbLayoutSidebarLeftCollapseFilled onClick={() => setOpenSideBar(!openSideBar)} className='text-rich-900 cursor-pointer size-8' />
+        <TbLayoutSidebarLeftCollapseFilled onClick={() => setOpenSideBar(!openSideBar)} className='text-rich-900 hidden lg:block cursor-pointer size-8' />
       </div>
       {
         openSideBar ?
@@ -20,7 +20,6 @@ const DesktopDashboardSidebar = ({ openSideBar, setOpenSideBar }) => {
                     SideBarLinks.map((link) => (
                       <NavLink
                         key={link.id}
-                        // to={link.path}
                         className={`${location.pathname === link.path ? "bg-rich-700" : ""} flex items-center px-4 py-3 hover:bg-rich-400 hover:text-white transition-all rounded-[13px] w-full`}
                       >
                         <link.icon className="size-6 text-rich-900" />
@@ -36,16 +35,16 @@ const DesktopDashboardSidebar = ({ openSideBar, setOpenSideBar }) => {
           )
           :
           (
-            <div className="">
-              <div className="flex items-center h-[calc(100vh_-140px)] justify-between flex-col mt-8 space-y-6">
-                <div className="flex items-center flex-col justify-center space-y-4">
+            <div className="hidden lg:block">
+              <div className="w-full h-[calc(100vh_-140px)] mt-8 flex items-center flex-col">
+                <div className="flex space-y-1 items-center flex-col justify-center ">
                   {
                     SideBarLinks.map((link) => (
                       <NavLink
                         key={link.id}
                         className={`${location.pathname === link.path ? "bg-rich-700" : ""} flex items-center px-4 py-3 hover:bg-rich-400 hover:text-white transition-all rounded-[13px] w-full`}
                       >
-                        <link.icon className="size-6 text-richblack-200" />
+                        <link.icon className="size-6 text-rich-900" />
                       </NavLink>
                     ))
                   }

@@ -6,7 +6,7 @@ import { LuListTodo } from "react-icons/lu";
 const SideBarLinks = [
   {
     id: 1,
-    title: "Enrolled Courses",
+    title: "Courses",
     icon: HiTable,
   },
   {
