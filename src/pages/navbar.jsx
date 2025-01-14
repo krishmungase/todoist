@@ -10,7 +10,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className="bg-rich-100 fixed top-3 left-[90px] w-[78%] sm:left-[100px] z-50 md:left-[120px] lg:left-[300px] md:w-[78%] rounded-md shadow-md">
+    <div className=" fixed top-3 left-[90px] w-[78%] sm:left-[100px] z-50 md:left-[120px] lg:left-[300px] md:w-[78%] rounded-mdshadow-md">
       <div className='container mx-auto px-8'>
         <div className="flex flex-wrap justify-between items-center py-4 px-4 lg:px-4">
           <div className="flex items-center space-x-3">
@@ -41,7 +41,7 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/dashboard/profile" className={`${window.location.pathname.includes("/dashboard") ? "text-rich-900" : "text-rich-400"} hover:text-rich-900 transition`}>
+                <Link to="/learn" className={`${window.location.pathname.includes("/learn") ? "text-rich-900 font-normal" : "text-rich-400"} hover:text-rich-900 transition`}>
                   Learn
                 </Link>
               </li>
