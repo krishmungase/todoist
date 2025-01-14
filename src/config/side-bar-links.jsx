@@ -6,18 +6,18 @@ import { LuListTodo } from "react-icons/lu";
 const SideBarLinks = [
   {
     id: 1,
-    title: "Courses",
-    icon: HiTable,
+    title: "Profile",
+    icon: CgProfile,
   },
   {
     id: 2,
-    title: "Wishlist",
+    title: "Tasks",
     icon: LuListTodo
   },
   {
     id: 3,
-    title: "My Profile",
-    icon: CgProfile,
+    title: "Recent Activities",
+    icon: HiTable,
   },
   {
     id: 4,
