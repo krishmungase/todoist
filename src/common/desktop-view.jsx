@@ -20,6 +20,7 @@ const DesktopDashboardSidebar = ({ openSideBar, setOpenSideBar }) => {
                     SideBarLinks.map((link) => (
                       <NavLink
                         key={link.id}
+                        to={link.path}
                         className={`${location.pathname === link.path ? "bg-rich-700" : ""} flex items-center px-4 py-3 hover:bg-rich-400 hover:text-white transition-all rounded-[13px] w-full`}
                       >
                         <link.icon className="size-6 font-bold text-rich-900" />
