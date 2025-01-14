@@ -12,9 +12,9 @@ const MobilDashboardSidebar = () => {
               SideBarLinks.map((link) => (
                 <NavLink
                   key={link.id}
-                  className={`${location.pathname === link.path ? "bg-rich-700" : ""} flex items-center px-4 py-3 hover:bg-rich-400 hover:text-white transition-all rounded-[13px] w-full`}
+                  className={`${location.pathname === link.path ? "bg-rich-700" : ""} flex items-center px-4 py-3 hover:bg-rich-400 hover:text-white rounded-[13px] w-full`}
                 >
-                  <link.icon className="size-6 text-rich-900" />
+                  <link.icon className="size-6 font-bold text-rich-900" />
                 </NavLink>
               ))
             }
