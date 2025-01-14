@@ -21,7 +21,9 @@ const DesktopDashboardSidebar = ({ openSideBar, setOpenSideBar }) => {
                       <NavLink
                         key={link.id}
                         to={link.path}
-                        className={`${location.pathname === link.path ? "bg-rich-700" : ""} flex items-center px-4 py-3 hover:bg-rich-400 hover:text-white transition-all rounded-[13px] w-full`}
+                        className={({ isActive }) =>
+                          `${isActive ? "bg-rich-400 text-white" : "text-rich-900"} flex items-center px-4 py-3 hover:bg-rich-400 hover:text-white transition-all rounded-[13px] w-full`
+                        }
                       >
                         <link.icon className="size-6 font-bold text-rich-900" />
                         <span className="pl-4 text-lg text-rich-900 tracking-wider">
