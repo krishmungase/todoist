@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import CodeMitra from "../assets/logo.png"
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const location = useLocation();
 
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -31,17 +32,17 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/about" className={`${window.location.pathname === "/about" ? "text-rich-900" : "text-rich-400"} hover:text-rich-900 transition`}>
+                <Link to="/about" className={`${location.pathname === "/about" ? "text-rich-900" : "text-rich-400"} hover:text-rich-900 transition`}>
                   About
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className={`${window.location.pathname === "/contact" ? "text-rich-900" : "text-rich-400"} hover:text-rich-900 transition`}>
+                <Link to="/contact" className={`${location.pathname === "/contact" ? "text-rich-900" : "text-rich-400"} hover:text-rich-900 transition`}>
                   Contact us
                 </Link>
               </li>
               <li>
-                <Link to="/learn" className={`${window.location.pathname.includes("/learn") ? "text-rich-900 font-normal" : "text-rich-400"} hover:text-rich-900 transition`}>
+                <Link to="/learn" className={`${location.pathname.includes("/learn") ? "text-rich-900 font-normal" : "text-rich-400"} hover:text-rich-900 transition`}>
                   Learn
                 </Link>
               </li>
