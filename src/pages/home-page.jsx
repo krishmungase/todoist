@@ -8,7 +8,6 @@ import { motion } from 'framer-motion';
 const HomePage = () => {
   return (
     <div className=''>
-      <Navbar />
       <div className="mt-16 px-4 flex flex-col items-center justify-center">
         <motion.h1
           className="text-xl md:text-3xl lg:text-5xl mt-16 font-semibold text-justify leading-relaxed"
