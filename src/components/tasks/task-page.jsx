@@ -2,6 +2,8 @@ import { useMutation, useQuery } from '@tanstack/react-query';
 import React, { useEffect, useState } from 'react';
 import todoService from '../../service/todo-service';
 import CreateTodo from '../helpers/create-task';
+import DesktopTodoList from './desktop-todo-view';
+import MobileTodoList from './mobile-todo-view';
 
 const TaskPage = () => {
   const [todoList, setTodoList] = useState([]);
@@ -10,7 +12,7 @@ const TaskPage = () => {
     mutationKey: ["get-todo-list"],
     mutationFn: () => todoService().getTodoList(),
     onSuccess: ({ data }) => {
-      // setSubLinks(data.data);
+      setTodoList(data?.todoList)
       console.log("data =>", data);
     },
     onError: (error) => {
@@ -23,29 +25,35 @@ const TaskPage = () => {
     refetchTodoList();
   }, [refetchTodoList]);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await todoService().getTodoList();
-  //       console.log("Manual fetch response:", response.data.todoList);
-  //       setTodoList(response.data.todoList)
-  //     } catch (error) {
-  //       console.error("Manual fetch error:", error);
-  //     }
-  //   };
-  //   fetchData();
-  // }, []);
 
   console.log("TodoList: ", todoList)
 
   return (
-    <div className="mt-16 px-4  w-full h-full ">
+    <div className="relative">
       <div className="flex items-center justify-end px-4">
         <CreateTodo refetchTodoList={refetchTodoList} />
       </div>
-      <div className="h-[calc(100vh_-170px)] my-8 overflow-y-auto md:p-6 md:rounded-lg md:shadow-sm scroll-smooth">
-        ...
-      </div>
+
+      {isLoading ? (
+        <div className="py-16 flex items-center justify-center">
+          <Spin />
+        </div>
+      ) : todoList?.length === 0 ? (
+        <div className="py-16 flex items-center justify-center text-primary font-semibold">
+          No Todo Yet? Get Started by Creating Your First One!
+        </div>
+      ) : (
+        <div className='mt-4'>
+          <DesktopTodoList
+            todoList={todoList}
+            refetchTodoList={refetchTodoList}
+          />
+          <MobileTodoList
+            todoList={todoList}
+            refetchTodoList={refetchTodoList}
+          />
+        </div>
+      )}
     </div>
   );
 };
