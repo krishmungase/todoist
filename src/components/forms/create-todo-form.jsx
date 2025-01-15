@@ -4,7 +4,7 @@ import { TODO_LEVELS, TODO_STATUS } from '../../config/todo';
 import { useMutation } from '@tanstack/react-query';
 import todoService from '../../service/todo-service';
 
-const CreateTodoForm = () => {
+const CreateTodoForm = ({ refetchTodoList, onCloseDrawer }) => {
   const [form] = Form.useForm();
 
   const { isLoading, mutate } = useMutation({
