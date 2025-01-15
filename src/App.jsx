@@ -22,9 +22,6 @@ const App = () => {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/learn" element={<LearnPage />} />
           <Route path="/tasks" element={<TaskPage />} />
-          <Route path="/recent" element={<LearnPage />} />
-          <Route path="/profile" element={<LearnPage />} />
-          <Route path="/setting" element={<LearnPage />} />
         </Route>
       </Routes>
     </div >
