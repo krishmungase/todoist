@@ -11,10 +11,12 @@ const CreateTodoForm = () => {
     mutationKey: "create-todo",
     mutationFn: (data) => todoService().createTodo(data),
     onSuccess: ({ data }) => {
-      console.log("data crated : ", data);
+      refetchTodoList();
+      onCloseDrawer();
+      form.resetFields();
     },
     onError: (error) => {
-      console.error("ERROR :: create course ::", error);
+      console.error("ERROR :: create todo ::", error);
       toast.error("Please try Again!!")
     },
     retry: false,
