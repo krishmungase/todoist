@@ -34,3 +34,9 @@ export const TASK_PRIORITY = [
   { label: "Medium", value: "medium" },
   { label: "High", value: "high" },
 ];
+
+export const TODO_CARD_BORDER_COLOR = {
+  hard: "border-l-red-500",
+  medium: "border-l-yellow-500",
+  easy: "border-l-green-500",
+};
