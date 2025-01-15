@@ -29,7 +29,7 @@ const TaskPage = () => {
   console.log("TodoList: ", todoList)
 
   return (
-    <div className="relative">
+    <div className=" mt-16 px-4 relative">
       <div className="flex items-center justify-end px-4">
         <CreateTodo refetchTodoList={refetchTodoList} />
       </div>
