@@ -18,7 +18,7 @@ const todoService = () => {
 
     deleteTodo: (data) =>
       request({
-        method: "POST",
+        method: "DELETE",
         data,
         url: urls.todo.deleteTodo
       })
